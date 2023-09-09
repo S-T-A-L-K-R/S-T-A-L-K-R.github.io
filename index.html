@@ -86,14 +86,15 @@
     <!-- <meta http-equiv="Refresh" content="0; url='#cookies'" /> -->
 </head>
 <body>
+    <!-- Hidden checkbox input as the trigger for the popup -->
     <input type="checkbox" id="popup-checkbox">
-    <div id="popup" class="overlay">
+
+    <!-- Popup container -->
+    <div id="popup">
         <div class="popup-content">
-            <label for="popup-checkbox" class="close-btn">Close</label>
-            <h2>This website does not use cookies</h2>
-            <div class="content">
-                Press X to continue browsing
-            </div>
+        <label for="popup-checkbox" class="close-btn">Close</label>
+        <h2>Popup Content</h2>
+        <p>This is a popup without using JavaScript!</p>
         </div>
     </div>
 
