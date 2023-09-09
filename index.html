@@ -42,7 +42,18 @@
             visibility: visible;
             opacity: 1;
         }
-        .popup
+        #popup 
+        {
+            display: none; /* Hide the popup by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            pointer-events: none; /* Prevent clicking on elements within the popup */
+        }
+        .popup-content
         {
             margin: 70px auto;
             padding: 20px;
@@ -51,12 +62,12 @@
             position: relative;
             transition: all 5s ease-in-out;
         }
-        .popup h2
+        .popup-content h2
         {
             margin-top: 0;
             color: #333;
         }
-        .popup .close
+        .popup-content .close
         {
             position: absolute;
             top: 20px;
@@ -66,24 +77,25 @@
             font-weight: bold;
             color: #333;
         }
-        .popup .close:hover
+        .popup-content .close:hover
         {
             color: #eeeeee;
         }
-        .popup .content
+        .popup-content .content
         {
             max-height: 30%;
             overflow: auto;
         }
 
 	</style>
-    <meta http-equiv="Refresh" content="0; url='#cookies'" />
+    <!-- <meta http-equiv="Refresh" content="0; url='#cookies'" /> -->
 </head>
 <body>
-    <div id="cookies" class="overlay">
-        <div class="popup">
+    <input type="checkbox" id="popup-checkbox">
+    <div id="popup" class="overlay">
+        <div class="popup-content">
+            <label for="popup-checkbox" class="close-btn">Close</label>
             <h2>This website does not use cookies</h2>
-            <a class="close" href="#">&times;</a>
             <div class="content">
                 Press X to continue browsing
             </div>
